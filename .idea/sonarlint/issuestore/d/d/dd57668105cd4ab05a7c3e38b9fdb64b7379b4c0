@@ -1,0 +1,15 @@
+
+jpython:S1542"MRename function "CASCADE" to match the regular expression ^[a-z_][a-z0-9_]*$.(‡¿‡øÿÿÿÿ
+jpython:S1542""MRename function "PROTECT" to match the regular expression ^[a-z_][a-z0-9_]*$.(Š¹´üÿÿÿÿ
+Dpython:S1172/"-Remove the unused function parameter "using".(”ê™s
+epython:S1542/"NRename function "RESTRICT" to match the regular expression ^[a-z_][a-z0-9_]*$.(”ê™s
+fpython:S15424"IRename function "SET" to match the regular expression ^[a-z_][a-z0-9_]*$.(¤†ó£üÿÿÿÿ
+Epython:S11727"-Remove the unused function parameter "using".(—‹ˆµ
+Epython:S1172<"-Remove the unused function parameter "using".(—‹ˆµ
+kpython:S1542D"NRename function "SET_NULL" to match the regular expression ^[a-z_][a-z0-9_]*$.(ëâ–ùÿÿÿÿ
+ipython:S1542K"QRename function "SET_DEFAULT" to match the regular expression ^[a-z_][a-z0-9_]*$.(ŠÆÃ¶
+hpython:S1542R"PRename function "DO_NOTHING" to match the regular expression ^[a-z_][a-z0-9_]*$.(ï±Ÿ
+spython:S1186R"[Add a nested comment explaining why this function is empty, or complete the implementation.(ï±Ÿ
+Lpython:S1172ı"3Remove the unused function parameter "source_attr".(»ïş™
+rpython:S3776÷"TRefactor this function to reduce its Cognitive Complexity from 61 to the 15 allowed.(–ÁØÎıÿÿÿÿ
+rpython:S3776´"TRefactor this function to reduce its Cognitive Complexity from 35 to the 15 allowed.(„úÔçøÿÿÿÿ
