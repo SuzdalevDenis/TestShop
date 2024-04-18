@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'home_page.apps.HomePageConfig',
     'person_page.apps.PersonPageConfig',
+    'goods.apps.GoodsConfig',
 ]
 
 

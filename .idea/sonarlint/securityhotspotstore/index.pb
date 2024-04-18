@@ -448,3 +448,7 @@ Q.idea/sonarlint/securityhotspotstore/3/2/322d301e1fa07b7ea5093f4fdd76424a93faeb
 Q.idea/sonarlint/securityhotspotstore/3/5/352c37748872df9acaf6b45fd802a8452b09832c,2/0/20977ac66c079afbeb518cf1c59def49b2ddf783
 
 Q.idea/sonarlint/securityhotspotstore/3/4/345c59ac00914e9913a47d57a0fbe1228c55ad0b,0/0/00f82f66b3ca5492fe4d23ecc4b3a8ac40bde162
+>
+goods/views.py,c/c/cca0bd3461ed9a0e0ac47b47fc137c7fd2bf5bc9
+=
+goods/urls.py,8/a/8a2543de8881390bd6770866d62e29ea99b77f8c
