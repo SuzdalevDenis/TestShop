@@ -22,3 +22,12 @@ urlpatterns = [
     path('', include('home_page.urls', namespace='home')),
     path('catalog/', include('goods.urls'), name='catalog'),
 ]
+
+"""
+www.site.com/admin/
+www.site.com
+www.site.com/about/
+www.site.com/catalog/
+www.site.com/catalog/product/
+
+"""
