@@ -2118,3 +2118,7 @@ R
 "goods/templates/goods/catalog.html,5/d/5deb829089dd010b9eb1470626121312eb5f54fd
 R
 "goods/templates/goods/product.html,9/e/9ebee9c5179a930ee71a9c22c714f840b81b1e76
+H
+fixtures/goods/cats.json,d/6/d6ceb92e964222e4917c15eba37f4420ae2a3914
+H
+fixtures/goods/prod.json,0/3/03553198a8ecdd1e3d257d115e73f7794298c006
