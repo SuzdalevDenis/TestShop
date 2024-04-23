@@ -97,8 +97,12 @@
                                 {% endfor %}
 
 
-                                <li class="page-item">
-                                  <a class="page-link" href="#">Next</a>
+                                <li class="page-item {% if not goods.has_next %}disabled{% endif %}">
+                                  <a class="page-link" href="{% if not goods.has_next %}
+                                  {% url "catalog:index" slug_url goods.next_page_numbers %}
+                                  {% else %}
+                                  #
+                                  {% endif %}">Следующая</a>
                                 </li>
                             </div>
                         </ul>
