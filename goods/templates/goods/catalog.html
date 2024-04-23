@@ -93,7 +93,7 @@
                                 </li>
 
                                 {% for page in goods.paginator.page_range %}
-                                {% if page >= goods.number - 2 and page <= goods.number + 2 %}
+                                {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
                                     <li class="page-item {% if goods.number == page %} active {% endif %}">
                                         <a class="page-link" href="{% url "catalog:index" slug_url page %}">{{ page }}</a>
                                     </li>
