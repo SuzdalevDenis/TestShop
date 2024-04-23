@@ -13,11 +13,10 @@ class HomeListView(ListView):
 
 def index(request):
 
-    categories = Categories.objects.all()
 
     context = {
         'title': 'Home - Главная',
-        'content': 'Магазин мебели HOME'
+        'content': 'Магазин мебели HOME',
     }
 
     return render(request,'home/index.html', context)
