@@ -3,7 +3,7 @@ from django import template
 from goods.models import Categories
 
 
-register = template.library()
+register = template.Library()
 
 
 @register.simple_tag()
