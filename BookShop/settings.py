@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     "debug_toolbar",
 
     'home_page.apps.HomePageConfig',
-    'person_page.apps.PersonPageConfig',
     'goods.apps.GoodsConfig',
+    'users.apps.UsersConfig',
 ]
 
 
@@ -66,8 +66,7 @@ ROOT_URLCONF = 'BookShop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
