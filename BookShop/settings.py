@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home_page.apps.HomePageConfig',
     'goods.apps.GoodsConfig',
     'users.apps.UsersConfig',
+    'carts.apps.CartsConfig',
 ]
 
 

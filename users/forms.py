@@ -6,33 +6,12 @@ from users.models import User
 
 class UserLoginForm(AuthenticationForm):
 
-    """Если нижний способ в верстке """
-    username = forms.CharField()
-    password = forms.CharField()
-
-    """Если верхний способ в верстке """
-    # username = forms.CharField(
-    #     label='Имя',
-    #     widget=forms.TextInput(attrs={
-    #         "autofocus": True,
-    #         'class': 'form-control',
-    #         'placeholder': "Введите ваше имя пользователя",
-    #     }
-    #     )
-    # )
-    # password = forms.CharField(
-    #     label='Пароль',
-    #     widget=forms.PasswordInput(attrs={
-    #         "autocomplete": "current-password",
-    #         'class': 'form-control',
-    #         'placeholder': "Введите ваш пароль",
-    #     }
-    #     ),
-    # )
-
     class Meta:
         model = User
         fields = ['username', 'password']
+
+    username = forms.CharField()
+    password = forms.CharField()
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -61,7 +40,7 @@ class ProfileForm(UserChangeForm):
     class Meta:
         model = User
         fields = (
-            "image"
+            "image",
             "first_name",
             "last_name",
             "username",
@@ -74,12 +53,4 @@ class ProfileForm(UserChangeForm):
     username = forms.CharField()
     email = forms.CharField()
 
-    # image = forms.ImageField(
-    #     widget=forms.FileInput(attrs=("class": "form-control mt-3")), required=True
-    # )
-    # first_name = forms.CharField(
-    #     widget=forms.TextInput(attrs=(
-    #         "class": "form-control",
-    #         "placeholder": "Введите ваше имя"
-    #     ))
-    # )
+
