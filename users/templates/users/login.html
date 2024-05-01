@@ -12,26 +12,6 @@
                                         {% if request.GET.next %}
                                         	<input type="hidden" name="next" value="{{ request.GET.next }}">
                                         {% endif %}
-
-{#                                        {% for item in form %}#}
-{#                                            <div class="mb-3">#}
-{#                                                <label for="{{ form.username.id_for_label }}" class="form-label">{{ item.label }}</label>#}
-{#                                                {{ form.username }}#}
-{#                                            </div>#}
-{#                                        {% endfor %}#}
-{#                                        <button type="submit" class="btn btn-dark btn-block">Войти</button>#}
-{#                                        #}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="username" class="form-label">Имя пользователя</label>#}
-{#                                            <input type="text" class="form-control" id="username" placeholder="Введите ваше имя пользователя" required>#}
-{#                                        </div>#}
-{#                                        <div class="mb-3">#}
-{#                                            <label for="password" class="form-label">Пароль</label>#}
-{#                                            <input type="password" class="form-control" id="password" placeholder="Введите ваш пароль" required>#}
-{#                                        </div>#}
-{#                                        <button type="submit" class="btn btn-dark btn-block">Войти</button>#}
-
-
                                         <div class="mb-3">
                                             <label for="id_username" class="form-label">Имя пользователя</label>
                                             <input type="text"
