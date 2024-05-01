@@ -23,16 +23,16 @@ class UserRegistrationForm(UserCreationForm):
             "last_name",
             "username",
             "email",
-            "password_1",
-            "password_2",
+            "password1",
+            "password2",
         )
 
     first_name = forms.CharField()
     last_name = forms.CharField()
     username = forms.CharField()
     email = forms.CharField()
-    password_1 = forms.CharField()
-    password_2 = forms.CharField()
+    password1 = forms.CharField()
+    password2 = forms.CharField()
 
 
 class ProfileForm(UserChangeForm):
