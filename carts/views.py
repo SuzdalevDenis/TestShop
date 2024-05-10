@@ -50,8 +50,8 @@ def cart_add(request):
 
 
 def cart_change(request):
-    cart_id = request.GET.get('cart_id')
-    quantity = request.GET.get('quantity')
+    cart_id = request.GET.get("cart_id")
+    quantity = request.GET.get("quantity")
 
     cart = Cart.objects.get(id=cart_id)
 
