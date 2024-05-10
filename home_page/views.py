@@ -19,7 +19,7 @@ def index(request):
         'content': 'Магазин мебели HOME',
     }
 
-    return render(request,'home/index.html', context)
+    return render(request, 'home/index.html', context)
 
 
 def about(request):
