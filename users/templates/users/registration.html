@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block modal_cart %}
-    {% include "includes/cart_button.html" %}
-{% endblock %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
 
 {% block content %}
-    <div class="row">
-                        <div class="container mt-5">
-                            <div class="row justify-content-center">
-                                <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded custom-shadow">
-                                    <h2 class="text-center mb-4">Регистрация</h2>
-                                    <form action="{% url "user:registration" %}" method="post">
-                                        {% csrf_token %}
+<div class="row">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded custom-shadow">
+                <h2 class="text-center mb-4">Регистрация</h2>
+                <form action="{% url "user:registration" %}" method="post">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="id_first_name" class="form-label">Имя*</label>
@@ -73,13 +73,13 @@
                                 {% if form.password2.errors %}
                                 <div class="alert alert-danger alert-dismissible fade show">{{form.password2.errors}}</div>
                                 {% endif %}
-                                            </div>
-                                        </div>
-                                        <button type="submit"
-                                            class="btn btn-dark btn-block">Зарегистрироваться</button>
-                                    </form>
-                                </div>
-                            </div>
                         </div>
                     </div>
-{% endblock %}
+                    <button type="submit"
+                        class="btn btn-dark btn-block">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

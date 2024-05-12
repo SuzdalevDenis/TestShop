@@ -5,7 +5,6 @@ from users.models import User
 
 
 class UserLoginForm(AuthenticationForm):
-
     class Meta:
         model = User
         fields = ['username', 'password']
@@ -15,7 +14,6 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UserRegistrationForm(UserCreationForm):
-
     class Meta:
         model = User
         fields = (
@@ -36,7 +34,6 @@ class UserRegistrationForm(UserCreationForm):
 
 
 class ProfileForm(UserChangeForm):
-
     class Meta:
         model = User
         fields = (
@@ -44,13 +41,10 @@ class ProfileForm(UserChangeForm):
             "first_name",
             "last_name",
             "username",
-            "email",
-        )
+            "email",)
 
     image = forms.ImageField(required=False)
     first_name = forms.CharField()
     last_name = forms.CharField()
     username = forms.CharField()
     email = forms.CharField()
-
-

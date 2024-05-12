@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block modal_cart %}
-    {% include "includes/cart_button.html" %}
-{% endblock %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
 
 {% block content %}
 <div class="row">
@@ -30,29 +30,29 @@
                         placeholder="Введите ваш пароль" required>
                     </div>
 
-                                        <button type="submit" class="btn btn-dark btn-block">Войти</button>
-                                    </form>
-                                    <div class="mt-3">
-                                        <a href="#">Забыли пароль?</a> | <a href="{% url "user:registration" %}">Создать аккаунт</a>
-                                    </div>
-                                    <hr>
-                                    <div class="text-center">
-                                        <p>Или авторизуйтесь через:</p>
-                                        <a href="#" class="btn btn-dark">
-                                            <img class="mx-1" src="{% static "/deps/icons/google.svg" %}" alt="Catalog Icon" width="16" height="16">
-                                            Google
-                                        </a>
-                                        <a href="#" class="btn btn-dark">
-                                            <img class="mx-1" src="{% static "/deps/icons/facebook.svg" %}" alt="Catalog Icon" width="16" height="16">
-                                            Facebook
-                                        </a>
-                                        <a href="#" class="btn btn-dark">
-                                            <img class="mx-1" src="{% static "/deps/icons/github.svg" %}" alt="Catalog Icon" width="16" height="16">
-                                            GitHub
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-{% endblock %}
+                    <button type="submit" class="btn btn-dark btn-block">Войти</button>
+                </form>
+                <div class="mt-3">
+                    <a href="#">Забыли пароль?</a> | <a href="{% url "user:registration" %}">Создать аккаунт</a>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p>Или авторизуйтесь через:</p>
+                    <a href="#" class="btn btn-dark">
+                        <img class="mx-1" src="{% static "deps/icons/google.svg" %}" alt="Catalog Icon" width="16" height="16">
+                        Google
+                    </a>
+                    <a href="#" class="btn btn-dark">
+                        <img class="mx-1" src="{% static "deps/icons/facebook.svg" %}" alt="Catalog Icon" width="16" height="16">
+                        Facebook
+                    </a>
+                    <a href="#" class="btn btn-dark">
+                        <img class="mx-1" src="{% static "deps/icons/facebook.svg" %}" alt="Catalog Icon" width="16" height="16">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

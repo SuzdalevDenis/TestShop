@@ -1,14 +1,13 @@
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
-
 from carts.models import Cart
 from carts.utils import get_user_carts
+
 from goods.models import Products
 
 
 def cart_add(request):
-
     product_id = request.POST.get("product_id")
 
     product = Products.objects.get(id=product_id)
@@ -50,8 +49,8 @@ def cart_add(request):
 
 
 def cart_change(request):
-    cart_id = request.GET.get("cart_id")
-    quantity = request.GET.get("quantity")
+    cart_id = request.POST.get("cart_id")
+    quantity = request.POST.get("quantity")
 
     cart = Cart.objects.get(id=cart_id)
 
@@ -61,20 +60,18 @@ def cart_change(request):
 
     cart = get_user_carts(request)
     cart_items_html = render_to_string(
-        "carts/includes/included_cart.html", {'carts': cart}, request=request
-    )
+        "carts/includes/included_cart.html", {"carts": cart}, request=request)
 
     response_data = {
-        'message': 'Количевство изменено',
-        'cart_items_html': cart_items_html,
-        'quantity': updated_quantity,
+        "message": "Количество изменено",
+        "cart_items_html": cart_items_html,
+        "quaantity": updated_quantity,
     }
 
     return JsonResponse(response_data)
 
 
 def cart_remove(request):
-
     cart_id = request.POST.get("cart_id")
 
     cart = Cart.objects.get(id=cart_id)
@@ -83,8 +80,7 @@ def cart_remove(request):
 
     user_cart = get_user_carts(request)
     cart_items_html = render_to_string(
-        "carts/includes/included_cart.html", {"carts": user_cart}, request=request
-    )
+        "carts/includes/included_cart.html", {"carts": user_cart}, request=request)
 
     response_data = {
         "message": "Товар удален",
