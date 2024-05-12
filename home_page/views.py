@@ -13,7 +13,6 @@ class HomeListView(ListView):
 
 def index(request):
 
-
     context = {
         'title': 'Home - Главная',
         'content': 'Магазин мебели HOME',
@@ -23,6 +22,7 @@ def index(request):
 
 
 def about(request):
+
     context = {
         'title': 'Home - О нас',
         'content': 'О нас',
@@ -30,4 +30,3 @@ def about(request):
     }
 
     return render(request,'home/about.html', context)
-

@@ -10,17 +10,6 @@ urlpatterns = [
 ]
 
 
-
-
-
-
-
-
-
-
-
-
-
 # from django.urls import path, register_converter
 #
 # from .views import HomeListView
