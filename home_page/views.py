@@ -30,3 +30,25 @@ def about(request):
     }
 
     return render(request,'home/about.html', context)
+
+
+def info(request):
+
+    context = {
+        'title': 'Home - Контактная инофрмация',
+        'content': 'Контактная информация',
+        'text_on_page': 'Информация',
+    }
+
+    return render(request,'home/info.html', context)
+
+
+def payment(request):
+
+    context = {
+        'title': 'Home - Доставка и оплата',
+        'content': 'Доставка и оплата',
+        'text_on_page': 'Доставка и оплата',
+    }
+
+    return render(request,'home/info.html', context)

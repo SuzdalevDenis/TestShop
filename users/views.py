@@ -6,8 +6,10 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from carts.models import Cart
 from orders.models import Order, OrderItem
+from django.core.mail import send_mail
+from django.conf import settings
 
-from users.forms import ProfileForm, UserLoginForm, UserRegistrationForm
+from users.forms import ProfileForm, UserLoginForm, UserRegistrationForm, ForgotPasswordForm
 
 
 def login(request):
@@ -102,3 +104,21 @@ def logout(request):
     messages.success(request, f"{request.user.username}, Вы вышли из аккаунта")
     auth.logout(request)
     return redirect(reverse('home:index'))
+
+
+def forgot_password(request):
+    if request.method == 'POST':
+        form = ForgotPasswordForm(data=request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            messages.success(request, f"Письмо отправлено на электронный адрес {email}")
+            return HttpResponseRedirect(reverse('home:index'))
+    else:
+        form = ForgotPasswordForm()
+
+    context = {
+        'title': 'Home - Забыли пароль?',
+        'form': form
+    }
+
+    return render(request, 'users/forgot_password.html', context)
