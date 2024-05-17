@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
 
     "debug_toolbar",
+    "rest_framework",
 
     'home_page.apps.HomePageConfig',
     'goods.apps.GoodsConfig',
@@ -117,6 +118,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 
 # Internationalization

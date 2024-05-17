@@ -1,14 +1,4 @@
-from django.views.generic import ListView
-from django.http import HttpResponse
-from .models import Author, Genre, BookModel
 from django.shortcuts import render
-
-from goods.models import Categories
-
-
-class HomeListView(ListView):
-    template_name = 'home/index.html'
-    model = Author
 
 
 def index(request):

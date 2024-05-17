@@ -27,6 +27,7 @@ urlpatterns = [
     path('user/', include('users.urls', namespace='user')),
     path('cart/', include('carts.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
 if settings.DEBUG:
@@ -34,12 +35,3 @@ if settings.DEBUG:
         path("__debug__/", include("debug_toolbar.urls")),
     ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-"""
-www.site.com/admin/
-www.site.com
-www.site.com/about/
-www.site.com/catalog/
-www.site.com/catalog/product/
-
-"""
