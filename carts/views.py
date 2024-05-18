@@ -3,8 +3,10 @@ from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from carts.models import Cart
 from carts.utils import get_user_carts
+from carts.serializers import CartSerializer
 
 from goods.models import Products
+from rest_framework import viewsets
 
 
 def cart_add(request):
@@ -89,3 +91,8 @@ def cart_remove(request):
     }
 
     return JsonResponse(response_data)
+
+
+class CartViewSet(viewsets.ModelViewSet):
+    queryset = Cart.objects.all().order_by('id')
+    serializer_class = CartSerializer

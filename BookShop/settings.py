@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'carts.apps.CartsConfig',
     'orders.apps.OrdersConfig',
+    'restapi.apps.RestapiConfig'
 
 ]
 

@@ -27,7 +27,7 @@ urlpatterns = [
     path('user/', include('users.urls', namespace='user')),
     path('cart/', include('carts.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include(('restapi.urls', 'restapi'), namespace='rest_framework')),
 ]
 
 if settings.DEBUG:
