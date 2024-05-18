@@ -4,8 +4,8 @@ from . import views
 
 app_name = 'restapi'
 
-router1 = routers.DefaultRouter()
-router1.register(
+router = routers.DefaultRouter()
+router.register(
     r'Cart', views.CartViewSet, basename='Cart',
 ),
 
@@ -14,7 +14,6 @@ router2.register(
     r'Categories', views.CartViewSet, basename='Categories',
 ),
 
-router = (router1, router2)
 
 urlpatterns = [
     path('', include(router.urls)),

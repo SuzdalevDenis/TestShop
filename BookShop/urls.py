@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 
 from BookShop import settings
 
+from carts.views import CartViewSet
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home_page.urls', namespace='home')),
@@ -27,7 +29,10 @@ urlpatterns = [
     path('user/', include('users.urls', namespace='user')),
     path('cart/', include('carts.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
-    path('api/', include(('restapi.urls', 'restapi'), namespace='rest_framework')),
+    path('api/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/carts/', CartViewSet.as_view()),
+
+
 ]
 
 if settings.DEBUG:
