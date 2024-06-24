@@ -6,7 +6,7 @@ from django.db.models import Prefetch
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, UpdateView, TemplateView
+from django.views.generic import CreateView, UpdateView, TemplateView, FormView
 
 from carts.models import Cart
 from orders.models import Order, OrderItem
@@ -206,19 +206,36 @@ def logout(request):
     return redirect(reverse('home:index'))
 
 
-def forgot_password(request):
-    if request.method == 'POST':
-        form = ForgotPasswordForm(data=request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            messages.success(request, f"Письмо отправлено на электронный адрес {email}")
-            return HttpResponseRedirect(reverse('home:index'))
-    else:
-        form = ForgotPasswordForm()
+class ForgotPasswordView(FormView):
+    template_name = 'users/forgot_password.html'
+    form_class = ForgotPasswordForm
+    success_url = reverse_lazy('home:index')
 
-    context = {
-        'title': 'Home - Забыли пароль?',
-        'form': form
-    }
+    def form_valid(self, form):
+        email = form.cleaned_data['email']
 
-    return render(request, 'users/forgot_password.html', context)
+        messages.success(self.request, f"Письмо отправлено на электронный адрес {email}")
+        return HttpResponseRedirect(self.success_url)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Home - Забыли пароль?'
+        return context
+
+
+# def forgot_password(request):
+#     if request.method == 'POST':
+#         form = ForgotPasswordForm(data=request.POST)
+#         if form.is_valid():
+#             email = form.cleaned_data['email']
+#             messages.success(request, f"Письмо отправлено на электронный адрес {email}")
+#             return HttpResponseRedirect(reverse('home:index'))
+#     else:
+#         form = ForgotPasswordForm()
+#
+#     context = {
+#         'title': 'Home - Забыли пароль?',
+#         'form': form
+#     }
+#
+#     return render(request, 'users/forgot_password.html', context)
