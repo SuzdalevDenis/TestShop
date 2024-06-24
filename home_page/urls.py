@@ -5,10 +5,10 @@ from home_page import views
 app_name = 'home'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
-    path('info/', views.info, name='info'),
-    path('payment/', views.payment, name='payment'),
+    path('', views.IndexView.as_view(), name='index'),
+    path('about/', views.AboutView.as_view(), name='about'),
+    path('info/', views.InfoView.as_view(), name='info'),
+    path('payment/', views.PaymentView.as_view(), name='payment'),
 ]
 
 

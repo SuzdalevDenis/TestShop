@@ -1,12 +1,12 @@
+from django.forms import model_to_dict
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from carts.models import Cart
 from carts.utils import get_user_carts
-from carts.serializers import CartSerializer
+# from carts.serializers import CartSerializer
 
 from goods.models import Products
 from rest_framework import viewsets, mixins, generics
@@ -96,12 +96,62 @@ def cart_remove(request):
     return JsonResponse(response_data)
 
 
+#_________________ API __________________
 # class CartViewSet(generics.ListAPIView):
 #     queryset = Cart.objects.all().order_by('id')
 #     serializer_class = CartSerializer
+#     http_method_names = ['get']
+
+    # def POST(self, request):
+    #     serializer = CartSerializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     serializer.save()
+    #
+    #     return Response({'carts': serializer.data})
+    #
+    # def PUT(self, request, *args, **kwargs):
+    #     pk = kwargs.get('pk', None)
+    #     if not pk:
+    #         return Response({'errors': 'Method PUT not allowed'})
+    #
+    #     try:
+    #         instance = Cart.objects.get(pk=pk)
+    #     except:
+    #         return Response({'errors': 'Method PUT not allowed'})
+    #
+    #     serializer = CartSerializer(data=request.data, instance=instance)
+    #     serializer.is_valid(raise_exception=True)
+    #     serializer.save()
+    #     return Response({'post': serializer.data})
 
 
-class CartViewSet(APIView):
+# class CartViewSet(APIView):
+#
+#     def get(self, request):
+#         lst = Cart.objects.all().values()
+#         return Response({'carts': list(lst)})
+#
+#     def post(self, request):
+#         post_new = Cart.objects.create(
+#             user=request.data['user'],
+#             product=request.data['product'],
+#             quantity=request.data['quantity'],
+#             created_timestamp=request.data['created_timestamp'],
+#         )
+#         return Response({'carts': model_to_dict(post_new)})
 
-    def get(self, request,):
-        return Response({'id': self.request})
+
+# class CartViewSet(APIView):
+#
+#     def get(self, request):
+#         carts = Cart.objects.all()
+#         return Response({'carts': CartSerializer(carts, many=True).data})
+#
+#     def post(self, request):
+#         post_new = Cart.objects.create(
+#             user=request.data['user'],
+#             product=request.data['product'],
+#             quantity=request.data['quantity'],
+#             created_timestamp=request.data['created_timestamp'],
+#         )
+#         return Response({'carts': model_to_dict(post_new)})

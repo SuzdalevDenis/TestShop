@@ -3,7 +3,7 @@ from rest_framework import routers
 
 from carts import views
 
-from .views import CartViewSet
+# from .views import CartViewSet
 
 app_name = 'carts'
 

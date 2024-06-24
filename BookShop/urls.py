@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from rest_framework import routers
 
 from BookShop import settings
 
-from carts.views import CartViewSet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,8 +29,7 @@ urlpatterns = [
     path('user/', include('users.urls', namespace='user')),
     path('cart/', include('carts.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
-    path('api/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/carts/', CartViewSet.as_view()),
+    path('', include('restapi.urls')),
 
 
 ]
