@@ -1,17 +1,11 @@
-from django.forms import model_to_dict
 from django.http import JsonResponse
-from django.shortcuts import redirect, render
-from django.template.loader import render_to_string
 from django.views import View
 from rest_framework.response import Response
 
 from carts.mixins import CartMixin
 from carts.models import Cart
-from carts.utils import get_user_carts
-# from carts.serializers import CartSerializer
 
 from goods.models import Products
-from rest_framework import viewsets, mixins, generics
 
 
 class CartAddView(CartMixin, View):

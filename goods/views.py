@@ -1,14 +1,9 @@
 from django.http import Http404
-from django.template.loader import render_to_string
 from django.views.generic import DetailView, ListView
-from rest_framework.response import Response
 
 
 from goods.models import Products, Categories
 from goods.utils import q_search
-# from goods.serializers import ProductSerializer, CategorySerializer
-
-from rest_framework import viewsets, mixins, generics
 
 
 class CatalogView(ListView):
