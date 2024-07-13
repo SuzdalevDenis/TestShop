@@ -1,4 +1,5 @@
 venv/
 .pylint
 __pycache__/
+cache/
 

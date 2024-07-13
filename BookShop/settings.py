@@ -166,3 +166,21 @@ AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# CELERY_BROKER_URL = 'redis://redis:6379/0'
+
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+        "OPTIONS": {
+            "db": BASE_DIR / 'cache',
+            # "parser_class": "redis.connection.PythonParser",
+            # "pool_class": "redis.BlockingConnectionPool",
+        }
+    },
+}
+
